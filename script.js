@@ -27,7 +27,7 @@ const listadoVestidos = [
     },
     {
         id: 2,
-        categoria: "casual",
+        categoria: "fiesta",
         nombre: "Vestido Primavera Flores",
         precio: 45.00,
         detalles: "100% algodón fresco, tirantes ajustables, cómodo.",
@@ -35,7 +35,7 @@ const listadoVestidos = [
     },
     {
         id: 3,
-        categoria: "gala", 
+        categoria: "fiesta",
         nombre: "Vestido Princesa Dorado",
         precio: 200.00,
         detalles: "Acabados brillantes, falda amplia de tul, corsé ajustable.",
@@ -43,12 +43,44 @@ const listadoVestidos = [
     },
     {
         id: 4,
-        categoria: "fiesta", 
+        categoria: "casual", 
         nombre: "Vestido Cóctel Rojo",
         precio: 85.00,
         detalles: "Encaje fino, falda entallada, ideal para eventos de noche.",
+        imagen: "https://i.postimg.cc/7ZBwHrqt/image.png"
+    },
+    {
+        id: 5,
+        categoria: "casual",
+        nombre: "Vestido Primavera Flores",
+        precio: 45.00,
+        detalles: "100% algodón fresco, tirantes ajustables, cómodo.",
         imagen: "https://unsplash.com"
-    }
+    },
+    {
+        id: 6,
+        categoria: "gala", 
+        nombre: "Vestido Princesa Dorado",
+        precio: 200.00,
+        detalles: "Acabados brillantes, falda amplia de tul, corsé ajustable.",
+        imagen: "https://unsplash.com"
+    },
+    {
+        id: 7,
+        categoria: "gala", 
+        nombre: "Vestido Princesa Dorado",
+        precio: 200.00,
+        detalles: "Acabados brillantes, falda amplia de tul, corsé ajustable.",
+        imagen: "https://unsplash.com" 
+    },
+    {
+        id: 8,
+        categoria: "graduacion",
+        nombre: "Vestido Princesa Dorado",
+        precio: 200.00,
+        detalles: "Acabados brillantes, falda amplia de tul, corsé ajustable.",
+        imagen: "https://unsplash.com"
+    },
 ];
 
 let carritoSeleccionado = [];
