@@ -154,6 +154,8 @@ body {
     overflow: hidden; 
     position: relative;
     touch-action: none;
+    background-color: #ffffff;
+    display: flex;
 }
 
 .card-vestido img {
@@ -164,6 +166,7 @@ body {
     will-change: transform;
     transition: transform 0.2s ease-out;
     transform-origin: center center;
+   background-color: #ffffff;
 }
 
 /* CASILLA CHECKBOX DE SELECCIÓN MÚLTIPLE */

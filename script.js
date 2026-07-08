@@ -85,7 +85,7 @@ function renderizarPagina() {
             `;
         }
 
-        const textoWhatsAppIndividual = `Hola Marishely's Outfits, me interesa comprar esta prenda:\n\n件 *${vestido.nombre}*\n💰 Precio: $${vestido.precio.toFixed(2)}\n🖼️ Foto: ${vestido.imagen}`;
+        const textoWhatsAppIndividual = `Hola Marishely's Outfits, me interesa comprar esta prenda:\n\n件 *${vestido.nombre}*\n💰 Precio: S/${vestido.precio.toFixed(2)}\n🖼️ Foto: ${vestido.imagen}`;
         
         // REPARADO AL 100%: Enlace nativo directo sin llaves y con barras correctas
         const enlaceWhatsApp = "https://wa.me//984858703?text=" + encodeURIComponent(textoWhatsAppIndividual);
@@ -102,7 +102,7 @@ function renderizarPagina() {
                 </div>
                 <div class="card-info">
                     <h3>${vestido.nombre}</h3>
-                    <p class="precio">$${vestido.precio.toFixed(2)}</p>
+                    <p class="precio">S/${vestido.precio.toFixed(2)}</p>
                     <p class="detalles">${vestido.detalles}</p>
                     <a href="${enlaceWhatsApp}" target="_blank" class="btn-whatsapp">
                         Hacer Pedido Inmediato
