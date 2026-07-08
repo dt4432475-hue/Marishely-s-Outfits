@@ -12,7 +12,7 @@
 body {
     background-color: #fcfcfc;
     color: #333;
-    padding-bottom: 80px; /* Espacio para que la barra grupal no tape el footer */
+    padding-bottom: 0px; /* Espacio para que la barra grupal no tape el footer */
 }
 
 .container {
@@ -69,10 +69,6 @@ body {
     width: 100%;
     max-width: 90%; /* Da un aire estético a los lados del párrafo */
 }
-
-
-
-
 
 .banner-buttons {
     display: flex;
@@ -157,15 +153,17 @@ body {
     height: 380px; 
     overflow: hidden; 
     position: relative;
+    touch-action: none;
 }
 
 .card-vestido img {
     width: 100%;
     height: 100%;
-    object-fit: cover; 
+    object-fit: contain;
     display: block;
-    transform-origin: center center;
+    will-change: transform;
     transition: transform 0.2s ease-out;
+    transform-origin: center center;
 }
 
 /* CASILLA CHECKBOX DE SELECCIÓN MÚLTIPLE */
@@ -325,7 +323,7 @@ footer {
     padding: 40px 20px;
     text-align: center;
     font-size: 0.95rem;
-    margin-top: 80px;
+    margin-top: 20px;
 }
 
 .btn-scroll-top {
@@ -351,6 +349,7 @@ footer {
 
 .btn-scroll-top.visible { opacity: 1; visibility: visible; transform: translateY(0); }
 
+
 /* RESPONSIVO */
 @media (max-width: 1024px) {
     .grid-vestidos { grid-template-columns: repeat(2, 1fr); gap: 20px; }
@@ -369,4 +368,5 @@ footer {
         width: 100%;
         padding: 0; /* Limpia rellenos que puedan empujar el banner hacia los lados */
     }
+    
 }

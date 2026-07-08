@@ -23,7 +23,7 @@ const listadoVestidos = [
         nombre: "Vestido Gala Glamour",
         precio: 120.00, 
         detalles: "Tela satín premium, corte sirena, espalda descubierta.",
-        imagen: "https://unsplash.com" 
+        imagen: "https://i.postimg.cc/VkSRfBRF/image.png" 
     },
     {
         id: 2,
@@ -192,7 +192,7 @@ document.addEventListener("click", (e) => {
 // =========================================================================
 // 5. MOTOR DE INTERRUPTOR DE ZOOM INTERNO (UN CLIC ENCIENDE / UN CLIC APAGA)
 // =========================================================================
-const ZOOM_INTERNO = window.innerWidth <= 600 ? 3.5 : 2.2; 
+const ZOOM_INTERNO = window.innerWidth <= 600 ? 5.0 : 3.5; 
 let lupaActivaGlobal = null; 
 
 document.addEventListener("click", (e) => {
@@ -231,8 +231,9 @@ document.addEventListener("click", (e) => {
 function moverEnfoqueLupa(e, contenedor, img) {
     if (!contenedor.classList.contains("zoom-activo")) return;
 
-    const clienteX = e.touches ? e.touches.clientX : e.clientX;
-    const clienteY = e.touches ? e.touches.clientY : e.pageY;
+    // Corrección para capturar el toque correctamente
+    const clienteX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clienteY = e.touches ? e.touches[0].clientY : e.clientY;
 
     const rect = contenedor.getBoundingClientRect();
     const x = clienteX - rect.left;
@@ -247,6 +248,7 @@ function moverEnfoqueLupa(e, contenedor, img) {
     img.style.transformOrigin = `${xPorcentaje}% ${yPorcentaje}%`;
 }
 
+// Aseguramos que los eventos apunten a la función correcta
 document.addEventListener("mousemove", (e) => {
     const contenedor = e.target.closest('.img-container');
     if (contenedor && contenedor.classList.contains("zoom-activo")) {
@@ -258,6 +260,7 @@ document.addEventListener("mousemove", (e) => {
 document.addEventListener("touchmove", (e) => {
     const contenedor = e.target.closest('.img-container');
     if (contenedor && contenedor.classList.contains("zoom-activo")) {
+        // Solo prevenir scroll si estamos haciendo zoom, para no bloquear el scroll de la página
         e.preventDefault(); 
         const img = contenedor.querySelector('img');
         moverEnfoqueLupa(e, contenedor, img);
