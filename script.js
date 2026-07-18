@@ -13,8 +13,8 @@ async function iniciarCatalogo() {
 
     for (const cat of CATEGORIAS) {
         try {
-            // Asegúrate que la carpeta se llame 'datos' tal como en tu VS Code
-            const res = await fetch(`./datos/${cat}.json`);
+            // RUTA CORREGIDA: Apunta a la carpeta 'data' tal como la tienes ahora
+            const res = await fetch(`./data/${cat}.json`);
             if (!res.ok) throw new Error(`No encontrado: ${cat}`);
             
             const data = await res.json();
@@ -34,14 +34,19 @@ function renderizarPagina() {
     const main = document.getElementById("catalogo-principal");
     const nav = document.getElementById("botones-navegacion");
     
-    nav.innerHTML = "";
+    // Limpiamos contenido previo antes de renderizar
+    if (nav) nav.innerHTML = "";
+    if (main) main.innerHTML = "";
     
     CATEGORIAS.forEach(cat => {
-        // Título limpio (ej: "vestidos" -> "VESTIDOS")
         const tituloLimpio = cat.toUpperCase().replace("-", " ");
         
-        nav.innerHTML += `<a href="#sec-${cat}" class="btn-banner">${tituloLimpio}</a>`;
+        // Agregar al menú de navegación (si existe el contenedor)
+        if (nav) {
+            nav.innerHTML += `<a href="#sec-${cat}" class="btn-banner">${tituloLimpio}</a>`;
+        }
         
+        // Agregar la sección completa
         main.innerHTML += `
             <section id="sec-${cat}">
                 <h2>${tituloLimpio}</h2>
@@ -49,7 +54,10 @@ function renderizarPagina() {
             </section>`;
         
         const grid = document.getElementById(`grid-${cat}`);
-        listadoVestidos.filter(v => v.categoria === cat).forEach(v => {
+        
+        // Filtrar y crear tarjetas
+        const filtrados = listadoVestidos.filter(v => v.categoria === cat);
+        filtrados.forEach(v => {
             grid.innerHTML += `
                 <div class="card-vestido">
                     <div class="img-container">
@@ -67,7 +75,7 @@ function renderizarPagina() {
 }
 
 // =========================================================================
-// 4. SOLUCIÓN DEFINITIVA DE SCROLL (Solo bloquea si hay zoom activo)
+// 4. SOLUCIÓN DEFINITIVA DE SCROLL
 // =========================================================================
 document.addEventListener("touchmove", (e) => {
     const contenedor = e.target.closest('.img-container');
