@@ -30,7 +30,7 @@ body {
    ========================================== */
 .banner {
     background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), 
-                url('/img/fnd.webp') no-repeat center center/cover;
+                url('https://i.postimg.cc/J7bK7B1S/upscalemedia-transformed.jpg') no-repeat center center/cover;
     min-height: 60vh; /* Cambiado a min-height para que crezca si el texto lo necesita */
     height: auto;
     display: flex;
