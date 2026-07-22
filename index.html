@@ -7,14 +7,40 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+    <!-- BANNER PRINCIPAL -->
     <header class="banner">
         <div class="banner-content">
             <h1>Marishely's Outfits</h1>
-            <nav id="botones-navegacion" class="banner-buttons"></nav>
+            <p>Selecciona tus prendas favoritas y arma tu pedido por WhatsApp.</p>
+            <div class="banner-buttons" id="botones-navegacion"></div>
         </div>
     </header>
 
-    <main id="catalogo-principal" class="container"></main>
+    <!-- CONTENEDOR PRINCIPAL DEL CATÁLOGO -->
+    <main class="container" id="catalogo-principal">
+        <!-- Las secciones se dibujarán aquí de forma automática -->
+    </main>
+
+    <!-- BARRA FLOTANTE DE PEDIDO GRUPAL (CARRITO) -->
+    <div id="barra-pedido-grupal" class="barra-grupal">
+        <div class="barra-grupal-info">
+            <span id="contador-prendas">0 prendas seleccionadas</span>
+            <strong id="total-pedido">$0.00</strong>
+        </div>
+        <button id="btn-enviar-grupal" class="btn-enviar-todos">Enviar Pedido Conjunto (WhatsApp)</button>
+    </div>
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Marishely's Outfits. Todos los derechos reservados.</p>
+            <p>Reserva tus prendas rápidamente y fácilmente con WhatsApp.</p>
+        </div>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE PARA SUBIR RÁPIDO -->
+    <button id="btn-subir" class="btn-scroll-top" title="Subir al inicio">↑</button>
 
     <script src="script.js"></script>
 </body>
