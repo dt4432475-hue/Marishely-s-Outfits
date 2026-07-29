@@ -39,9 +39,10 @@
             
             <!-- Producto 1: Gala -->
             <div class="product-card" data-category="gala">
-                <div class="product-img" style="background-image: url('img/gala-1.jpg');">
-                    <span class="tag">Gala</span>
-                </div>
+               <div class="product-img" style="background-image: url('https://i.postimg.cc/5tcBhfLT/image.png');">
+            <span class="tag">Gala</span>
+            <button class="btn-zoom" onclick="abrirModal('https://i.postimg.cc/5tcBhfLT/image.png', 'Vestido Elegante Noir')">🔍 Ver de cerca</button>
+</div>
                 <div class="product-info">
                     <h3>Vestido Elegante Noir</h3>
                     <p class="price">$120.00</p>
@@ -143,6 +144,110 @@
             });
         }
     </script>
+
+    <!-- Ventana Modal con Zoom de Seguimiento de Cursor -->
+    <div id="imageModal" class="modal">
+        <span class="close-modal" onclick="cerrarModal()">&times;</span>
+        <div class="modal-container" id="modalContainer">
+            <img id="imgExpanded" alt="Vestido ampliado">
+            <div id="lensResult"></div>
+        </div>
+        <div id="caption"></div>
+    </div>
+
+    <script>
+        const modal = document.getElementById("imageModal");
+        const modalImg = document.getElementById("imgExpanded");
+        const lensResult = document.getElementById("lensResult");
+        const modalContainer = document.getElementById("modalContainer");
+        const captionText = document.getElementById("caption");
+
+        function abrirModal(imageSrc, titleText) {
+            modal.style.display = "flex";
+            modalImg.src = imageSrc;
+            lensResult.style.backgroundImage = `url('${imageSrc}')`;
+            captionText.innerHTML = titleText;
+        }
+
+        function cerrarModal() {
+            modal.style.display = "none";
+            lensResult.style.display = "none";
+        }
+
+        // Función que rastrea el mouse o el dedo en pantallas táctiles
+        function moverZoom(e) {
+            e.preventDefault();
+            let rect = modalImg.getBoundingClientRect();
+            
+            // Obtener coordenadas de la posición del mouse o toque táctil
+            let clientX = e.clientX || (e.touches && e.touches[0].clientX);
+            let clientY = e.clientY || (e.touches && e.touches[0].clientY);
+
+            if (!clientX || !clientY) return;
+
+            let x = clientX - rect.left;
+            let y = clientY - rect.top;
+
+            // Verificar si el cursor está dentro de los límites de la imagen
+            if (x < 0 || y < 0 || x > rect.width || y > rect.height) {
+                lensResult.style.display = "none";
+                return;
+            }
+
+            lensResult.style.display = "block";
+
+            // Calcular el porcentaje de posición para mover la imagen de fondo (Zoom del 250%)
+            let xPercent = (x / rect.width) * 100;
+            let yPercent = (y / rect.height) * 100;
+
+            lensResult.style.backgroundSize = `${rect.width * 2.5}px ${rect.height * 2.5}px`;
+            lensResult.style.backgroundPosition = `${xPercent}% ${yPercent}%`;
+        }
+
+        modalImg.addEventListener("mousemove", moverZoom);
+        modalImg.addEventListener("touchmove", moverZoom, { passive: false });
+
+        modalImg.addEventListener("mouseleave", () => {
+            lensResult.style.display = "none";
+        });
+
+        // Cerrar si hacen clic fuera de la caja de la imagen
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                cerrarModal();
+            }
+        }
+    </script>
+
+    <script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const params = new URLSearchParams(window.location.search);
+        const categoria = params.get('categoria');
+
+        if (categoria) {
+            let cards = document.querySelectorAll('.product-card');
+            let buttons = document.querySelectorAll('.filter-buttons button');
+
+            // 1. Activar visualmente el botón correspondiente arriba
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                // Detectar qué botón corresponde según su función onclick
+                if (btn.getAttribute('onclick') && btn.getAttribute('onclick').includes(categoria)) {
+                    btn.classList.add('active');
+                }
+            });
+
+            // 2. Mostrar únicamente las tarjetas de esa categoría y ocultar las demás
+            cards.forEach(card => {
+                if (card.getAttribute('data-category') === categoria) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    });
+</script>
 
 </body>
 </html>
