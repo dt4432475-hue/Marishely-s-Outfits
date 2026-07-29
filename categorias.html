@@ -39,26 +39,26 @@
             
             <!-- Producto 1: Gala -->
             <div class="product-card" data-category="vestidos">
-               <div class="product-img" style="background-image: url('https://i.postimg.cc/5tcBhfLT/image.png');">
-            <span class="tag">Vestidos</span>
-            <button class="btn-zoom" onclick="abrirModal('https://i.postimg.cc/5tcBhfLT/image.png', 'Vestido Elegante Noir')">🔍 Ver de cerca</button>
+               <div class="product-img" style="background-image: url('#');">
+            <span class="tag">Vestido</span>
+            <button class="btn-zoom" onclick="abrirModal('#', 'Vestido Elegante Noir')">🔍 Ver de cerca</button>
 </div>
                 <div class="product-info">
                     <h3>Vestido Elegante Noir</h3>
-                    <p class="price">$120.00</p>
+                    <p class="price">S/ 120.00</p>
                     <p class="sizes">Tallas disponibles: S, M, L</p>
-                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Elegante%20Noir" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                    <a href="#" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
             </div>
 
             <!-- Producto 2: Gala -->
             <div class="product-card" data-category="vestidos">
                 <div class="product-img" style="background-image: url('img/gala-2.jpg');">
-                    <span class="tag">Vestidos</span>
+                    <span class="tag">Vestido</span>
                 </div>
                 <div class="product-info">
                     <h3>Vestido Satén Esmeralda</h3>
-                    <p class="price">$145.00</p>
+                    <p class="price">S/ 145.00</p>
                     <p class="sizes">Tallas disponibles: XS, S, M</p>
                     <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Satén%20Esmeralda" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
@@ -67,11 +67,11 @@
             <!-- Producto 3: Casual -->
             <div class="product-card" data-category="tops">
                 <div class="product-img" style="background-image: url('img/casual-1.jpg');">
-                    <span class="tag">Tops</span>
+                    <span class="tag">Top</span>
                 </div>
                 <div class="product-info">
                     <h3>Vestido Midi Floreado</h3>
-                    <p class="price">$65.00</p>
+                    <p class="price">S/ 65.00</p>
                     <p class="sizes">Tallas disponibles: S, M, L, XL</p>
                     <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Midi%20Floreado" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
@@ -80,11 +80,11 @@
             <!-- Producto 4: Casual -->
             <div class="product-card" data-category="tops">
                 <div class="product-img" style="background-image: url('img/casual-2.jpg');">
-                    <span class="tag">Tops</span>
+                    <span class="tag">Top</span>
                 </div>
                 <div class="product-info">
                     <h3>Vestido Lino Verano</h3>
-                    <p class="price">$70.00</p>
+                    <p class="price">S/ 70.00</p>
                     <p class="sizes">Tallas disponibles: S, M</p>
                     <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Lino%20Verano" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
@@ -93,11 +93,11 @@
             <!-- Producto 5: Cortos -->
             <div class="product-card" data-category="pantalones">
                 <div class="product-img" style="background-image: url('img/corto-1.jpg');">
-                    <span class="tag">Pantalones</span>
+                    <span class="tag">Pantalon</span>
                 </div>
                 <div class="product-info">
                     <h3>Vestido Cocktail Rosa</h3>
-                    <p class="price">$85.00</p>
+                    <p class="price">S/ 85.00</p>
                     <p class="sizes">Tallas disponibles: XS, S, M</p>
                     <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Cocktail%20Rosa" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
@@ -106,11 +106,11 @@
             <!-- Producto 6: Cortos -->
             <div class="product-card" data-category="pantalones">
                 <div class="product-img" style="background-image: url('img/corto-2.jpg');">
-                    <span class="tag">Jeans</span>
+                    <span class="tag">Jean</span>
                 </div>
                 <div class="product-info">
                     <h3>Vestido Ajustado Brillante</h3>
-                    <p class="price">S/95.00</p>
+                    <p class="price">S/ 95.00</p>
                     <p class="sizes">Tallas disponibles: S, M</p>
                     <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Ajustado%20Brillante" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
                 </div>
@@ -121,7 +121,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Luxe Dresses. Todos los derechos reservados.</p>
+        <p>&copy; 2026 Marishelys Oufits. Todos los derechos reservados.</p>
     </footer>
 
     <!-- Script de filtrado interactivo -->
@@ -246,6 +246,42 @@
                 }
             });
         }
+    });
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Tu número de WhatsApp real (con código de país, sin el +)
+        const tuNumeroWhatsApp = "51984858703"; 
+
+        const botonesWhatsApp = document.querySelectorAll(".btn-whatsapp");
+
+        botonesWhatsApp.forEach(boton => {
+            boton.addEventListener("click", (e) => {
+                e.preventDefault(); // Evita que abra un enlace vacío
+
+                // Encuentra la tarjeta de producto más cercana al botón
+                const card = boton.closest(".product-card");
+
+                // Extrae los datos automáticamente de la tarjeta
+                const nombre = card.querySelector("h3").innerText;
+                const precio = card.querySelector(".price").innerText;
+                const tallas = card.querySelector(".sizes").innerText;
+                
+                // Extrae la imagen del estilo de fondo
+                const divImg = card.querySelector(".product-img");
+                const styleBg = divImg.style.backgroundImage;
+                // Limpia el formato url('...') para obtener solo el enlace limpio
+                const imagenUrl = styleBg.slice(5, -2);
+
+                // Arma el mensaje personalizado de forma automática
+                const mensaje = `Hola, me interesa este modelo:\n*${nombre}*\nPrecio: ${precio}\n${tallas}\nFoto: ${imagenUrl}`;
+                
+                // Crea el enlace oficial de WhatsApp y redirige
+                const urlWhatsApp = `https://wa.me/${tuNumeroWhatsApp}?text=${encodeURIComponent(mensaje)}`;
+                window.open(urlWhatsApp, "_blank");
+            });
+        });
     });
 </script>
 
