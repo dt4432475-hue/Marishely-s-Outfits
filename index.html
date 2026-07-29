@@ -3,45 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Marishely's Outfits</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Boutique de Vestidos | Elegancia y Estilo</title>
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Fuente elegante de Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
 </head>
 <body>
 
-    <!-- BANNER PRINCIPAL -->
-    <header class="banner">
-        <div class="banner-content">
-            <h1>Marishely's Outfits</h1>
-            <p>Selecciona tus prendas favoritas y arma tu pedido por WhatsApp.</p>
-            <div class="banner-buttons" id="botones-navegacion"></div>
-        </div>
+    <!-- Cabecera / Menú -->
+    <header class="navbar">
+        <div class="logo">MARISHELYS OUFITS</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html">Catálogo</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
     </header>
 
-    <!-- CONTENEDOR PRINCIPAL DEL CATÁLOGO -->
-    <main class="container" id="catalogo-principal">
-        <!-- Las secciones se dibujarán aquí de forma automática -->
-    </main>
-
-    <!-- BARRA FLOTANTE DE PEDIDO GRUPAL (CARRITO) -->
-    <div id="barra-pedido-grupal" class="barra-grupal">
-        <div class="barra-grupal-info">
-            <span id="contador-prendas">0 prendas seleccionadas</span>
-            <strong id="total-pedido">$0.00</strong>
+    <!-- Banner Principal -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Encuentra el vestido perfecto para cada ocasión</h1>
+            <p>Diseños exclusivos que realzan tu elegancia.</p>
+            <a href="categorias.html" class="btn-primary">Ver Categorías</a>
         </div>
-        <button id="btn-enviar-grupal" class="btn-enviar-todos">Enviar Pedido Conjunto (WhatsApp)</button>
-    </div>
+    </section>
 
-    <!-- PIE DE PÁGINA -->
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2026 Marishely's Outfits. Todos los derechos reservados.</p>
-            <p>Reserva tus prendas rápidamente y fácilmente con WhatsApp.</p>
+    <!-- Sección de Categorías Destacadas -->
+    <section class="categories-section">
+        <h2>Explora por Categorías</h2>
+        <div class="category-grid">
+            <div class="category-card" style="background-image: url('img/gala.jpg');">
+                <div class="overlay">
+                    <h3>Vestidos de Gala</h3>
+                    <a href="categorias.html#gala" class="btn-secondary">Ver más</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('img/casual.jpg');">
+                <div class="overlay">
+                    <h3>Vestidos Casuales</h3>
+                    <a href="categorias.html#casual" class="btn-secondary">Ver más</a>
+                </div>
+            </div>
+            <div class="category-card" style="background-image: url('img/cortos.jpg');">
+                <div class="overlay">
+                    <h3>Vestidos Cortos</h3>
+                    <a href="categorias.html#cortos" class="btn-secondary">Ver más</a>
+                </div>
+            </div>
         </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contacto">
+        <p>&copy; 2026 Marishelys Oufits. ¿Interesada en un modelo? Escríbenos por WhatsApp.</p>
     </footer>
 
-    <!-- BOTÓN FLOTANTE PARA SUBIR RÁPIDO -->
-    <button id="btn-subir" class="btn-scroll-top" title="Subir al inicio">↑</button>
-
-    <script src="script.js"></script>
 </body>
 </html>

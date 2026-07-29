@@ -1,0 +1,380 @@
+/* Estilos generales y tipografía */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    background-color: #faf9f6; /* Tono nude/marfil muy suave y elegante */
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Barra de navegación */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.navbar nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+    color: #b8977e; /* Tono dorado/bronce elegante */
+}
+
+/* Banner Hero */
+.hero {
+    height: 70vh;
+    /* Cambiamos 0.3 por 0.5 o 0.6 para que se oscurezca más la imagen de fondo */
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/img/banner2.jpg') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 20px;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+/* Botones */
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+.btn-primary:hover {
+    background-color: #b8977e;
+    color: #fff;
+}
+
+/* Sección de Categorías */
+.categories-section {
+    padding: 80px 40px;
+    text-align: center;
+}
+
+.categories-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 4px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 30px;
+    color: #fff;
+    transition: background 0.3s;
+}
+
+.category-card:hover .overlay {
+    background: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.2));
+}
+
+.overlay h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    width: fit-content;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: #333;
+}
+
+/* Footer */
+footer {
+    background-color: #1a1a1a;
+    color: #aaa;
+    text-align: center;
+    padding: 30px;
+    font-size: 0.9rem;
+}
+
+/* Estilos específicos para la página de Catálogo */
+.catalog-header {
+    text-align: center;
+    padding: 60px 20px 30px;
+    background-color: #ffffff;
+}
+
+.catalog-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.catalog-header p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* Botones de Filtro */
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background-color: #f1ede9;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: #555;
+    transition: all 0.3s ease;
+}
+
+.filter-btn:hover, .filter-btn.active {
+    background-color: #b8977e;
+    color: #fff;
+}
+
+/* Cuadrícula de Productos */
+.products-section {
+    padding: 50px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background-color: #ffffff;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+.product-img {
+    height: 350px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.product-img .tag {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 4px 12px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.product-info {
+    padding: 20px;
+    text-align: left;
+}
+
+.product-info h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+    color: #222;
+}
+
+.product-info .price {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #b8977e;
+    margin-bottom: 5px;
+}
+
+.product-info .sizes {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Botón de WhatsApp en Productos */
+.btn-whatsapp {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: #25d366; /* Color oficial de WhatsApp */
+    color: #fff;
+    padding: 10px 0;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.3s;
+}
+
+.btn-whatsapp:hover {
+    background-color: #1ebe5d;
+}
+
+/* ==========================================
+   DISEÑO RESPONSIVO PARA MÓVILES Y TABLETS
+   ================================---------- */
+
+@media screen and (max-width: 768px) {
+    /* Barra de navegación adaptable */
+    .navbar {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .navbar nav a {
+        margin: 0 10px;
+        font-size: 0.9rem;
+    }
+
+    /* Banner Principal (Hero) en móviles */
+    .hero {
+        height: 60vh;
+        padding: 0 15px;
+    }
+
+    .hero-content h1 {
+        font-size: 2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.95rem;
+    }
+
+    /* Secciones de categorías y catálogo */
+    .categories-section {
+        padding: 40px 20px;
+    }
+
+    .categories-section h2, 
+    .catalog-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .catalog-header {
+        padding: 40px 15px 20px;
+    }
+
+    /* Botones de filtro en móviles (permiten scroll horizontal si son muchos) */
+    .filter-buttons {
+        gap: 8px;
+        padding: 0 10px;
+    }
+
+    .filter-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    /* Cuadrícula de productos de 1 sola columna en pantallas pequeñas */
+    .products-section {
+        padding: 30px 15px;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr; /* Una tarjeta por línea en celulares */
+        gap: 20px;
+    }
+
+    .product-img {
+        height: 300px; /* Imagen un poco más compacta en celulares */
+    }
+}
+
+/* Para pantallas medianas (Tablets) */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 20px 40px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tablets */
+    }
+}

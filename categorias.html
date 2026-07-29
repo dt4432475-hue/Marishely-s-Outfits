@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Vestidos | Marishelys Oufits</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Cabecera / Menú -->
+    <header class="navbar">
+        <div class="logo">MARISHELYS OUFITS</div>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="categorias.html" class="active">Catálogo</a>
+            <a href="index.html#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Título de la Sección de Catálogo -->
+    <section class="catalog-header">
+        <h1>Nuestro Catálogo Exclusivo</h1>
+        <p>Filtra por categoría y encuentra el diseño ideal para tu próxima ocasión.</p>
+        
+        <!-- Botones de Filtrado -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterSelection('all', event)">Todos</button>
+            <button class="filter-btn" onclick="filterSelection('gala', event)">Vestidos de Gala</button>
+            <button class="filter-btn" onclick="filterSelection('casual', event)">Vestidos Casuales</button>
+            <button class="filter-btn" onclick="filterSelection('cortos', event)">Vestidos Cortos</button>
+        </div>
+    </section>
+
+    <!-- Cuadrícula de Productos -->
+    <section class="products-section">
+        <div class="product-grid">
+            
+            <!-- Producto 1: Gala -->
+            <div class="product-card" data-category="gala">
+                <div class="product-img" style="background-image: url('img/gala-1.jpg');">
+                    <span class="tag">Gala</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vestido Elegante Noir</h3>
+                    <p class="price">$120.00</p>
+                    <p class="sizes">Tallas disponibles: S, M, L</p>
+                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Elegante%20Noir" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Producto 2: Gala -->
+            <div class="product-card" data-category="gala">
+                <div class="product-img" style="background-image: url('img/gala-2.jpg');">
+                    <span class="tag">Gala</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vestido Satén Esmeralda</h3>
+                    <p class="price">$145.00</p>
+                    <p class="sizes">Tallas disponibles: XS, S, M</p>
+                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Satén%20Esmeralda" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Producto 3: Casual -->
+            <div class="product-card" data-category="casual">
+                <div class="product-img" style="background-image: url('img/casual-1.jpg');">
+                    <span class="tag">Casual</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vestido Midi Floreado</h3>
+                    <p class="price">$65.00</p>
+                    <p class="sizes">Tallas disponibles: S, M, L, XL</p>
+                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Midi%20Floreado" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Producto 4: Casual -->
+            <div class="product-card" data-category="casual">
+                <div class="product-img" style="background-image: url('img/casual-2.jpg');">
+                    <span class="tag">Casual</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vestido Lino Verano</h3>
+                    <p class="price">$70.00</p>
+                    <p class="sizes">Tallas disponibles: S, M</p>
+                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Lino%20Verano" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Producto 5: Cortos -->
+            <div class="product-card" data-category="cortos">
+                <div class="product-img" style="background-image: url('img/corto-1.jpg');">
+                    <span class="tag">Cortos</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vestido Cocktail Rosa</h3>
+                    <p class="price">$85.00</p>
+                    <p class="sizes">Tallas disponibles: XS, S, M</p>
+                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Cocktail%20Rosa" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+            <!-- Producto 6: Cortos -->
+            <div class="product-card" data-category="cortos">
+                <div class="product-img" style="background-image: url('img/corto-2.jpg');">
+                    <span class="tag">Cortos</span>
+                </div>
+                <div class="product-info">
+                    <h3>Vestido Ajustado Brillante</h3>
+                    <p class="price">$95.00</p>
+                    <p class="sizes">Tallas disponibles: S, M</p>
+                    <a href="https://wa.me/tu_numero_whatsapp?text=Hola,%20me%20interesa%20el%20Vestido%20Ajustado%20Brillante" target="_blank" class="btn-whatsapp">Consultar por WhatsApp</a>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Luxe Dresses. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Script de filtrado interactivo -->
+    <script>
+        function filterSelection(category, event) {
+            let cards = document.querySelectorAll('.product-card');
+            let buttons = document.querySelectorAll('.filter-btn');
+
+            // Cambiar estilos de botones activos
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filtrar las tarjetas de productos
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>
