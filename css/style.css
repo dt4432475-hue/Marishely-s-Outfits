@@ -51,7 +51,7 @@ h1, h2, h3 {
 .hero {
     height: 70vh;
     /* Cambiamos 0.3 por 0.5 o 0.6 para que se oscurezca más la imagen de fondo */
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/banner.webp') center/cover no-repeat;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/banner.webp') center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
